@@ -13,7 +13,7 @@
             <li class="flex justify-between items-center py-2">
                 <p [appHighlightTask]="todo.completed" class="text-xl text-slate-400 font-semibold">{{todo.title}}</p>
                 <div class="flex gap-2">
-                    <button (click)="toggleTodo(todo)" class="bg-slate-400 p-2 rounded-lg hover:bg-slate-500 uppercase font-bold text-slate-800 transition ease-in-out duration-300">{{isCompleted}}</button>
+                    <button (click)="toggleTodo(todo)" class="bg-slate-400 p-2 rounded-lg hover:bg-slate-500 uppercase font-bold text-slate-800 transition ease-in-out duration-300">{{isCompleted()}}</button>
                     <button (click)="deleteTodo(todo)" class="bg-slate-400 p-2 rounded-lg hover:bg-slate-500 uppercase font-bold text-slate-800 transition ease-in-out duration-300">Delete</button>
                 </div>
             </li>

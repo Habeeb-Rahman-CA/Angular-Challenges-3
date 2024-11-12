@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { ITodolist } from '../../model/interface';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -16,7 +16,7 @@ export class TodoComponent {
 
   newTask: string = ''
 
-  isCompleted: string = 'Pending'
+  isCompleted = signal<string>('Pending')
 
 
   addTodo(){
@@ -31,8 +31,8 @@ export class TodoComponent {
   toggleTodo(todo: ITodolist){
     todo.completed = !todo.completed
     if (todo.completed) {
-      return this.isCompleted = 'Completed'
+      return this.isCompleted.set('Completed')
     }
-    return this.isCompleted = 'Pending'
+    return this.isCompleted.set('Pending') 
   }
 }
